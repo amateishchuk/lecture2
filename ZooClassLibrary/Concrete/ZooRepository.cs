@@ -18,18 +18,15 @@ namespace ZooClassLibrary.Concrete
             new Fox("Fox"),
             new Lion("Lion2"),
             new Elephant("Elep3"),
-            new Fox("Foee"),
-            new Bear("Bee")
+            new Tiger("Tiger1"),
+            new Wolf("Wolf5"),
+            //new Bear("Bear6")
         };
 
         public void ChangeRandomAnimalState(object obj)
         {
-            int notDeadAnimalsCount = animals.Where(a => a.State != State.Dead).Count();
-            int randomIndex = new Random().Next(notDeadAnimalsCount);
-
+            int randomIndex = new Random().Next(animals.Count);
             animals[randomIndex].ChangeState();
-
-            animals = animals.OrderBy(a => a.State).ToList();
         }
 
         public bool CheckIsAllAnimalsDead()
@@ -105,7 +102,7 @@ namespace ZooClassLibrary.Concrete
 
         public void ShowAnimals()
         {
-            animals.ForEach(); // Extensions.Extensions.cs
+            animals.ForEach(); // Extensions.ListExtensions.cs
         }
 
         private Animal getAnimalByName(string name)
