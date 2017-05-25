@@ -15,16 +15,27 @@ namespace ZooClassLibrary.Concrete
     {
         List<Animal> animals = new List<Animal>()
         {
-            new Tiger("Tiger1"),
-            new Lion("Lion2"),
-            new Elephant("Elep3"),
-            new Fox("Fox4"),
-            new Wolf("Wolf5"),
-            new Bear("Bear6")
+            new Fox("Fox")//,
+            //new Lion("Lion2"),
+            //new Elephant("Elep3"),
+            //new Tiger("Tiger1"),
+            //new Wolf("Wolf5"),
+            //new Bear("Bear6")
         };
+
+        public void ChangeRandomAnimalState(object obj)
+        {
+            int randomIndex = new Random().Next(animals.Count);
+            animals[randomIndex].ChangeState();
+        }
 
         public bool CheckIsAllAnimalsDead()
         {
+            var result = animals.Select(a => a.State != State.Dead).Count();
+            if (result == 0)
+                return false;
+            else
+                return true;
             return animals.Select(a => a.State != State.Dead).Count() == 0;
         }
 
@@ -50,7 +61,7 @@ namespace ZooClassLibrary.Concrete
         {
             Animal animal = getAnimalByName(name);
 
-            if (animal != null)
+            if (animal != null && animal.State != State.Dead)
             {
                 animal.Eat();
                 Console.WriteLine($"{name} was fed");

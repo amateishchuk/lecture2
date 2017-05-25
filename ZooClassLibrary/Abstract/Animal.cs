@@ -37,10 +37,43 @@ namespace ZooClassLibrary.Abstract
             else
                 Console.WriteLine($"{Name} is healthy");
         }
+
         public void Eat()
         {
             State = State.Full;
         }
+
+        public void ChangeState()
+        {
+            if (State < State.Dead)
+            {
+                if (State == State.Sick)
+                {
+                    if (Health > 0)
+                    {
+                        Health--;
+                        if (Health == 0)
+                            State = State.Dead;
+                    }
+                    else
+                        State = State.Dead;
+                }
+                else
+                {
+                    State++;
+                    if (State == State.Sick)
+                    {
+                        if (Health > 0)
+                        {
+                            Health--;
+                            if (Health == 0)
+                                State = State.Dead;
+                        }
+                        else
+                            State = State.Dead;
+                    }
+                }
+                }       
+        }
     }
 }
-

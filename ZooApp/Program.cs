@@ -23,7 +23,10 @@ namespace ZooClassLibrary
             var healCommand = new HealCommand(repository);
             var deleteCommand = new DeleteCommand(repository);
 
-            do
+            TimerCallback destFunc = new TimerCallback(repository.ChangeRandomAnimalState);
+            Timer changeRandomAnimalStateFiveSec = new Timer(destFunc, null, 5000, 5000);
+
+            while (repository.CheckIsAllAnimalsDead())
             {
                 zooWorker.Command = showCommand;
                 zooWorker.Run();
@@ -52,20 +55,20 @@ namespace ZooClassLibrary
                         zooWorker.Command = deleteCommand;
                         break;
                     case 5:
-                        zooWorker.Command = showCommand;
+                        Console.WriteLine("Wait 2 sec...");
                         break;
                     default:
                         Console.WriteLine("Unknown command");
                         break;
                 }
 
-                if (!zooWorker.CommandIsNull())
+                if (zooWorker.Command != null)
                     zooWorker.Run();
 
                 Thread.Sleep(2000);
                 Console.Clear();
 
-            } while (!repository.CheckIsAllAnimalsDead());
+            }
 
 
 

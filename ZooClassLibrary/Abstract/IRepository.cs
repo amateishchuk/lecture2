@@ -14,5 +14,6 @@ namespace ZooClassLibrary.Abstract
         void DeleteAnimal(string name);
         void ShowAnimals();
         bool CheckIsAllAnimalsDead();
+        void ChangeRandomAnimalState(object obj);
     }
 }
