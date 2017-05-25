@@ -14,5 +14,10 @@ namespace ZooClassLibrary.Abstract
         {
             Command.Execute();
         }
+
+        public bool CommandIsNull()
+        {
+            return Command == null;
+        }
     }
 }

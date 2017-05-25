@@ -17,11 +17,16 @@ namespace ZooClassLibrary.Concrete
         {
             new Tiger("Tiger1"),
             new Lion("Lion2"),
-            new Elephant("Elephant"),
+            new Elephant("Elep3"),
             new Fox("Fox4"),
             new Wolf("Wolf5"),
             new Bear("Bear6")
         };
+
+        public bool CheckIsAllAnimalsDead()
+        {
+            return animals.Select(a => a.State != State.Dead).Count() == 0;
+        }
 
         public void DeleteAnimal(string name)
         {
@@ -68,16 +73,22 @@ namespace ZooClassLibrary.Concrete
 
         public void InsertAnimal(string name, string kind)
         {
+            kind = kind.FormatWord();
+
             Animal animal = getAnimalByName(name);
 
             if (animal != null)
-                Console.WriteLine($"The animal with specified name ({name}) is present in repository");            
+                Console.WriteLine($"The animal with specified name ({name}) is present in repository");
             else
             {
                 animal = returnNewAnimal(name, kind);
 
                 if (animal != null)
+                {
                     animals.Add(animal);
+                    Console.WriteLine($"The Animal was inserted (name: {name}, kind: {kind})");
+                }
+
                 else
                     Console.WriteLine("The specified kind of animal isn't implemented");
             }
@@ -88,22 +99,17 @@ namespace ZooClassLibrary.Concrete
             animals.ForEach(); // Extensions.ListExtensions.cs
         }
 
-        private string formatWord(string word)
-        {
-            return word.Trim().ToLower();
-        }
-
         private Animal getAnimalByName(string name)
         {
             return animals
-                .FirstOrDefault(a => formatWord(a.Name) == formatWord(name));
+                .FirstOrDefault(a => a.Name.FormatWord() == name.FormatWord());
         }
         
         private Animal returnNewAnimal(string name, string kind)
         {
             Animal animal = null;
 
-            switch (formatWord(kind))
+            switch (kind)
             {
                 case "lion":
                     animal = new LionFactory().CreateAnimal(name);

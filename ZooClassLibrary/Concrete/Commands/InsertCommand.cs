@@ -18,7 +18,7 @@ namespace ZooClassLibrary.Concrete.Commands
             Console.Write("INSERTING: Input animal's name: ");
             string name = Console.ReadLine();
 
-            Console.Write("DELETING: Input animal's kind (lion, tiger, elephant, wolf, bear, fox): ");
+            Console.Write("INSERTING: Input animal's kind (lion, tiger, elephant, wolf, bear, fox): ");
             string kind = Console.ReadLine();
 
             repository.InsertAnimal(name, kind);

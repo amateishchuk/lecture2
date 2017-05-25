@@ -7,7 +7,7 @@ using ZooClassLibrary.Abstract;
 
 namespace ZooClassLibrary.Concrete.Commands
 {
-    class ShowAllCommand : Command
+    public class ShowAllCommand : Command
     {
         public ShowAllCommand(IRepository repo) : base(repo)
         {

@@ -12,7 +12,7 @@ namespace ZooClassLibrary.Abstract
 
         public Command(IRepository repo)
         {
-            repo = repository;
+            repository = repo;
         }
         public abstract void Execute();
     }
