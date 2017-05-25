@@ -15,11 +15,11 @@ namespace ZooClassLibrary.Concrete
     {
         List<Animal> animals = new List<Animal>()
         {
-            new Fox("Fox")//,
-            //new Lion("Lion2"),
-            //new Elephant("Elep3"),
-            //new Tiger("Tiger1"),
-            //new Wolf("Wolf5"),
+            new Fox("Fox"),
+            new Lion("Lion2"),
+            new Elephant("Elep3"),
+            new Tiger("Tiger1"),
+            new Wolf("Wolf5"),
             //new Bear("Bear6")
         };
 
@@ -31,12 +31,7 @@ namespace ZooClassLibrary.Concrete
 
         public bool CheckIsAllAnimalsDead()
         {
-            var result = animals.Select(a => a.State != State.Dead).Count();
-            if (result == 0)
-                return false;
-            else
-                return true;
-            return animals.Select(a => a.State != State.Dead).Count() == 0;
+            return animals.Where(a => a.State != State.Dead).ToList().Count == 0;
         }
 
         public void DeleteAnimal(string name)
