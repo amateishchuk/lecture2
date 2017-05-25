@@ -33,6 +33,8 @@ namespace ZooClassLibrary.Abstract
             {
                 Health++;
                 Console.WriteLine($"{Name} was heal");
+                if (Health == MAXHEALTH)
+                    State--;
             }
             else
                 Console.WriteLine($"{Name} is healthy");
