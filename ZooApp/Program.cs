@@ -26,7 +26,7 @@ namespace ZooClassLibrary
             TimerCallback destFunc = new TimerCallback(repository.ChangeRandomAnimalState);
             Timer changeRandomAnimalStateFiveSec = new Timer(destFunc, null, 5000, 5000);
 
-            while (!repository.CheckIsAllAnimalsDead())
+            while (repository.IsAnythingAlive())
             {
                 zooWorker.Command = showAnimalsCommand;
                 zooWorker.Run();

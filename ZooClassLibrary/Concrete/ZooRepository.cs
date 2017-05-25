@@ -25,19 +25,17 @@ namespace ZooClassLibrary.Concrete
 
         public void ChangeRandomAnimalState(object obj)
         {
-            int randomIndex = new Random().Next(animals.Count);
+            int notDeadAnimalsCount = animals.Where(a => a.State != State.Dead).Count();
+
+            int randomIndex = new Random().Next(0, notDeadAnimalsCount);
             animals[randomIndex].ChangeState();
 
-            animals = animals.OrderBy(a => a.State).ToList();
-
-
-            //Console.Clear();
-            //ShowAnimals();            
+            animals = animals.OrderBy(a => a.State).ToList();         
         }
 
-        public bool CheckIsAllAnimalsDead()
+        public bool IsAnythingAlive()
         {
-            return animals.Where(a => a.State != State.Dead).ToList().Count == 0;
+            return animals.Where(a => a.State != State.Dead).ToList().Count > 0;
         }
 
         public void DeleteAnimal(string name)

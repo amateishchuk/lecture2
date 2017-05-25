@@ -13,7 +13,7 @@ namespace ZooClassLibrary.Abstract
         void HealAnimal(string name);
         void DeleteAnimal(string name);
         void ShowAnimals();
-        bool CheckIsAllAnimalsDead();
+        bool IsAnythingAlive();
         void ChangeRandomAnimalState(object obj);
     }
 }

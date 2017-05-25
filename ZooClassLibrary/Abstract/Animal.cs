@@ -45,13 +45,26 @@ namespace ZooClassLibrary.Abstract
             if (State != State.Full)
                 State = State.Full;
             else
-                Console.WriteLine($"{Name} is full already");    
+                Console.WriteLine($"{Name} is full already");
         }
 
         public void ChangeState()
         {
-            if (State < State.Dead)
+
+            if (State == State.Sick)
             {
+                if (Health > 0)
+                {
+                    Health--;
+                    if (Health == 0)
+                        State = State.Dead;
+                }
+                else
+                    State = State.Dead;
+            }
+            else
+            {
+                State++;
                 if (State == State.Sick)
                 {
                     if (Health > 0)
@@ -63,22 +76,7 @@ namespace ZooClassLibrary.Abstract
                     else
                         State = State.Dead;
                 }
-                else
-                {
-                    State++;
-                    if (State == State.Sick)
-                    {
-                        if (Health > 0)
-                        {
-                            Health--;
-                            if (Health == 0)
-                                State = State.Dead;
-                        }
-                        else
-                            State = State.Dead;
-                    }
-                }
-            }       
+            }
         }
     }
 }
