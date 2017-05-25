@@ -17,7 +17,7 @@ namespace ZooClassLibrary
             IRepository repository = new ZooRepository();
             Person zooWorker = new ZooWorker();
 
-            var showCommand = new ShowAllCommand(repository);
+            var showAnimalsCommand = new ShowAllCommand(repository);
             var insertCommand = new InsertCommand(repository);
             var feedCommand = new FeedCommand(repository);
             var healCommand = new HealCommand(repository);
@@ -28,7 +28,7 @@ namespace ZooClassLibrary
 
             while (!repository.CheckIsAllAnimalsDead())
             {
-                zooWorker.Command = showCommand;
+                zooWorker.Command = showAnimalsCommand;
                 zooWorker.Run();
 
                 showCommands();
@@ -56,22 +56,23 @@ namespace ZooClassLibrary
                         zooWorker.Command = deleteCommand;
                         break;
                     case 5:
-                        Console.WriteLine("Wait 2 sec...");
                         break;
                     default:
                         Console.WriteLine("Unknown command");
                         break;
                 }
+                Console.WriteLine();
 
                 if (zooWorker.Command != null)
                     zooWorker.Run();
 
+                Console.WriteLine("Wait 2 sec...");
                 Thread.Sleep(2000);
                 Console.Clear();
 
             }
 
-            zooWorker.Command = showCommand;
+            zooWorker.Command = showAnimalsCommand;
             zooWorker.Run();
             Console.WriteLine("All animals are died");
 
