@@ -32,6 +32,7 @@ namespace ZooClassLibrary
                 zooWorker.Run();
 
                 showCommands();
+
                 int commandNumber;
                 int.TryParse(Console.ReadLine().Trim(), out commandNumber);
 
