@@ -27,6 +27,12 @@ namespace ZooClassLibrary.Concrete
         {
             int randomIndex = new Random().Next(animals.Count);
             animals[randomIndex].ChangeState();
+
+            animals = animals.OrderBy(a => a.State).ToList();
+
+
+            //Console.Clear();
+            //ShowAnimals();            
         }
 
         public bool CheckIsAllAnimalsDead()

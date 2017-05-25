@@ -12,7 +12,7 @@ namespace ZooClassLibrary.Extensions
         public static void ForEach(this List<Animal> animals)
         {
             Console.WriteLine("Name\t\tHP\tMaxHP\tState");
-            foreach (var animal in animals.OrderBy(a => a.State))
+            foreach (var animal in animals)
                 Console.WriteLine($"{animal.Name}\t\t{animal.Health}\t{animal.MAXHEALTH}\t{animal.State}");
             Console.WriteLine();
         }

@@ -73,7 +73,7 @@ namespace ZooClassLibrary.Abstract
                             State = State.Dead;
                     }
                 }
-                }       
+            }       
         }
     }
 }
