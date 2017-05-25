@@ -12,7 +12,7 @@ namespace ZooApp.Abstract
         public string Name { get; protected set; }
         public State State { get; protected set; }
         public int Health { get; protected set; }
-        protected readonly int MAXHEALTH;
+        public readonly int MAXHEALTH;
 
         public Animal(string name, int maxhealth)
         {
@@ -22,5 +22,25 @@ namespace ZooApp.Abstract
             MAXHEALTH = maxhealth;
         }
 
+        public void HealthUp()
+        {
+            if (State == State.Dead)
+            {
+                Console.WriteLine($"{Name} is dead");
+                Console.WriteLine("You can delete from repository");
+            }
+            else if (Health < MAXHEALTH)
+            {
+                Health++;
+                Console.WriteLine($"{Name} was heal");
+            }
+            else
+                Console.WriteLine($"{Name} is healthy");
+        }
+        public void Eat()
+        {
+            State = State.Full;
+        }
     }
 }
+
