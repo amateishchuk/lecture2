@@ -42,7 +42,10 @@ namespace ZooClassLibrary.Abstract
 
         public void Eat()
         {
-            State = State.Full;
+            if (State != State.Full)
+                State = State.Full;
+            else
+                Console.WriteLine($"{Name} is full already");    
         }
 
         public void ChangeState()
