@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ZooClassLibrary.Abstract;
 using ZooClassLibrary.Concrete;
 using ZooClassLibrary.Concrete.Commands;
+using ZooClassLibrary.Concrete.ZooWorkers;
 
 namespace ZooClassLibrary
 {
@@ -22,6 +23,8 @@ namespace ZooClassLibrary
             var feedCommand = new FeedCommand(repository);
             var healCommand = new HealCommand(repository);
             var deleteCommand = new DeleteCommand(repository);
+
+
 
             TimerCallback destFunc = new TimerCallback(repository.ChangeRandomAnimalState);
             Timer changeRandomAnimalStateFiveSec = new Timer(destFunc, null, 5000, 5000);
@@ -74,7 +77,7 @@ namespace ZooClassLibrary
 
             zooWorker.Command = showAnimalsCommand;
             zooWorker.Run();
-            Console.WriteLine("All animals are died");
+            Console.WriteLine("All animals died");
 
 
         }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZooClassLibrary.Abstract;
 
-namespace ZooClassLibrary.Concrete
+namespace ZooClassLibrary.Concrete.ZooWorkers
 {
     public class ZooWorker : Person
     {

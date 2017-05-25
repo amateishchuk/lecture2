@@ -2,3 +2,4 @@ C:\Users\Administrator\Desktop\binary-studio\Lecture2\ZooProject\ZooProject\ZooC
 C:\Users\Administrator\Desktop\binary-studio\Lecture2\ZooProject\ZooProject\ZooClassLibrary\bin\Debug\ZooClassLibrary.pdb
 C:\Users\Administrator\Desktop\binary-studio\Lecture2\ZooProject\ZooProject\ZooClassLibrary\obj\Debug\ZooClassLibrary.dll
 C:\Users\Administrator\Desktop\binary-studio\Lecture2\ZooProject\ZooProject\ZooClassLibrary\obj\Debug\ZooClassLibrary.pdb
+C:\Users\Administrator\Desktop\binary-studio\Lecture2\ZooProject\ZooProject\ZooClassLibrary\obj\Debug\ZooClassLibrary.csprojResolveAssemblyReference.cache

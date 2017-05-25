@@ -62,8 +62,8 @@
     <Compile Include="Concrete\Commands\HealCommand.cs" />
     <Compile Include="Concrete\Commands\InsertCommand.cs" />
     <Compile Include="Concrete\Commands\ShowAllCommand.cs" />
-    <Compile Include="Concrete\ZooRepository.cs" />
-    <Compile Include="Concrete\ZooWorker.cs" />
+    <Compile Include="Concrete\Repositories\ZooRepository.cs" />
+    <Compile Include="Concrete\ZooWorkers\ZooWorker.cs" />
     <Compile Include="Enums\State.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

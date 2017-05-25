@@ -17,9 +17,6 @@ namespace ZooClassLibrary.Concrete
         {
             new Fox("Fox"),
             new Lion("Lion2"),
-            new Elephant("Elep3"),
-            new Tiger("Tiger1"),
-            new Wolf("Wolf5"),
             new Bear("Bear6")
         };
 
