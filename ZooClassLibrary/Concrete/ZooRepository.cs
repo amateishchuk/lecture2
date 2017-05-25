@@ -20,7 +20,7 @@ namespace ZooClassLibrary.Concrete
             new Elephant("Elep3"),
             new Tiger("Tiger1"),
             new Wolf("Wolf5"),
-            //new Bear("Bear6")
+            new Bear("Bear6")
         };
 
         public void ChangeRandomAnimalState(object obj)
