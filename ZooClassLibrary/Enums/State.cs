@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooClassLibrary
+namespace ZooClassLibrary.Enums
 {
-    class Program
+    public enum State : int
     {
-        static void Main(string[] args)
-        {
-        }
+        Full, // сыт
+        Hungry,
+        Sick,
+        Dead
     }
 }

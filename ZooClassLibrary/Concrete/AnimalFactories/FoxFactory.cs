@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Abstract;
-using ZooApp.Concrete.Animals;
+using ZooClassLibrary.Abstract;
+using ZooClassLibrary.Concrete.Animals;
 
-namespace ZooApp.Concrete.AnimalFactories
+namespace ZooClassLibrary.Concrete.AnimalFactories
 {
-    public class LionFactory : IAnimalFactory
+    public class FoxFactory : IAnimalFactory
     {
         public Animal CreateAnimal(string name)
         {
-            return new Lion(name);
+            return new Fox(name);
         }
     }
 }

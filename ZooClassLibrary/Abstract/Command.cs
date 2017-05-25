@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooApp.Abstract
+namespace ZooClassLibrary.Abstract
 {
     public abstract class Command
     {

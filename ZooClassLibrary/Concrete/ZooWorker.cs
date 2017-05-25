@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZooClassLibrary.Abstract;
 
-namespace ZooApp.Enums
+namespace ZooClassLibrary.Concrete
 {
-    public enum State : int
+    public class ZooWorker : Person
     {
-        Full, // сыт
-        Hungry,
-        Sick,
-        Dead
     }
 }

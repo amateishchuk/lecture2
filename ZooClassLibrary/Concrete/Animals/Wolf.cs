@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Abstract;
+using ZooClassLibrary.Abstract;
 
-namespace ZooApp.Concrete.Animals
+namespace ZooClassLibrary.Concrete.Animals
 {
-    public class Fox : Animal
+    public class Wolf : Animal
     {
-        public Fox(string name) : base(name, 3)
+        public Wolf(string name) : base(name, 4)
         {
         }
     }

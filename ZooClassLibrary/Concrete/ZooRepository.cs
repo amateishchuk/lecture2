@@ -3,15 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Abstract;
-using ZooApp.Concrete.AnimalFactories;
-using ZooApp.Enums;
+using ZooClassLibrary.Abstract;
+using ZooClassLibrary.Concrete.AnimalFactories;
+using ZooClassLibrary.Concrete.Animals;
+using ZooClassLibrary.Enums;
+using ZooClassLibrary.Extensions;
 
-namespace ZooApp.Concrete
+namespace ZooClassLibrary.Concrete
 {
     public class ZooRepository : IRepository
     {
-        List<Animal> animals = new List<Animal>();
+        List<Animal> animals = new List<Animal>()
+        {
+            new Tiger("Tiger1"),
+            new Lion("Lion2"),
+            new Elephant("Elephant"),
+            new Fox("Fox4"),
+            new Wolf("Wolf5"),
+            new Bear("Bear6")
+        };
 
         public void DeleteAnimal(string name)
         {
@@ -71,6 +81,11 @@ namespace ZooApp.Concrete
                 else
                     Console.WriteLine("The specified kind of animal isn't implemented");
             }
+        }
+
+        public void ShowAnimals()
+        {
+            animals.ForEach(); // Extensions.ListExtensions.cs
         }
 
         private string formatWord(string word)

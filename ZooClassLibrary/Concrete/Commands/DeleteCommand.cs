@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Abstract;
+using ZooClassLibrary.Abstract;
 
-namespace ZooApp.Concrete.Commands
+namespace ZooClassLibrary.Concrete.Commands
 {
     public class DeleteCommand : Command
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZooApp.Abstract
+namespace ZooClassLibrary.Abstract
 {
     public interface IRepository
     {
@@ -12,5 +12,6 @@ namespace ZooApp.Abstract
         void FeedAnimal(string name);
         void HealAnimal(string name);
         void DeleteAnimal(string name);
+        void ShowAnimals();
     }
 }

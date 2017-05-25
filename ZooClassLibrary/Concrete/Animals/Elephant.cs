@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Abstract;
+using ZooClassLibrary.Abstract;
 
-namespace ZooApp.Concrete.Animals
+namespace ZooClassLibrary.Concrete.Animals
 {
     public class Elephant : Animal
     {

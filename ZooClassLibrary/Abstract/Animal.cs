@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZooApp.Enums;
+using ZooClassLibrary.Enums;
 
-namespace ZooApp.Abstract
+namespace ZooClassLibrary.Abstract
 {
     public abstract class Animal
     {
